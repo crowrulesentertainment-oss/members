@@ -20,4 +20,4 @@ window.CROW_SUPABASE_URL =
 */
 
 window.CROW_SUPABASE_PUBLISHABLE_KEY =
-  "sb_publishable_-m6NuVfbrcs84OH7aGPrDw_AuLfXo8J";
+  "sb_publishable_-Z6wecSOxwOk6IBut2zLnw_8DfRxnE9";
