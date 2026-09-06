@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#05060a">
+<title>Settings — CrowRules Member Hub</title>
+
+<link rel="stylesheet" href="../assets/css/member-core.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/member-app.js"></script>
+</head>
+
+<body data-page="settings">
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+
+<div class="brand">
+<div class="brand-title">CROW<span>RULES</span></div>
+<div class="brand-sub">MEMBER HUB</div>
+</div>
+
+<nav class="nav">
+
+<div class="nav-section">Member</div>
+
+<a href="member-dashboard.html">⌂ Dashboard</a>
+<a href="member-profile.html">◉ My Profile</a>
+<a href="member-edit-profile.html">✎ Edit Profile</a>
+
+<div class="nav-section">My Library</div>
+
+<a href="member-watch.html">▶ Watch</a>
+<a href="member-favorites.html">★ Favorites</a>
+<a href="member-my-list.html">＋ My List</a>
+<a href="member-history.html">◷ Watch History</a>
+
+<div class="nav-section">Community</div>
+
+<a href="member-rewards.html">◆ Rewards</a>
+<a href="member-leaderboard.html">♛ Leaderboard</a>
+<a href="member-friends.html">♟ Friends</a>
+<a href="member-community.html">☷ Community</a>
+<a href="member-notifications.html">● Notifications</a>
+
+<div class="nav-section">Explore</div>
+
+<a href="member-shows.html">▣ Shows</a>
+<a href="member-tv-guide.html">▤ TV Guide</a>
+<a href="member-creators.html">♙ Creators</a>
+
+<div class="sidebar-footer">
+
+<a data-page="settings"
+href="member-settings.html">
+⚙ Settings
+</a>
+
+<a href="#" data-signout>
+↪ Sign Out
+</a>
+
+</div>
+
+</nav>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+
+<button class="menu-btn" data-menu>☰</button>
+
+<div></div>
+
+<div class="top-actions">
+
+<a class="icon-btn"
+href="member-notifications.html">
+🔔
+</a>
+
+<a class="memberAvatar"
+href="member-profile.html">
+MR
+</a>
+
+</div>
+
+</header>
+
+<section class="content">
+
+<div class="page-heading">
+
+<h1>Settings</h1>
+
+<p>
+Manage your CrowRules Member Hub preferences.
+</p>
+
+</div>
+
+<div class="grid grid-2">
+
+<div class="card">
+
+<h2>Account</h2>
+
+<div class="list">
+
+<div class="list-row">
+
+<div class="list-main">
+
+<div class="list-title">
+Profile
+</div>
+
+<div class="list-meta">
+Update your public member information.
+</div>
+
+</div>
+
+<a class="btn"
+href="member-edit-profile.html">
+Edit
+</a>
+
+</div>
+
+<div class="list-row">
+
+<div class="list-main">
+
+<div class="list-title">
+Email Address
+</div>
+
+<div class="list-meta"
+id="memberEmail">
+Loading...
+</div>
+
+</div>
+
+<span class="badge">
+AUTH
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Preferences</h2>
+
+<div class="list">
+
+<div class="list-row">
+
+<div class="list-main">
+
+<div class="list-title">
+Email Notifications
+</div>
+
+<div class="list-meta">
+Receive important CrowRules updates.
+</div>
+
+</div>
+
+<input
+type="checkbox"
+id="emailNotifications"
+checked>
+
+</div>
+
+<div class="list-row">
+
+<div class="list-main">
+
+<div class="list-title">
+Community Notifications
+</div>
+
+<div class="list-meta">
+Friend and community activity.
+</div>
+
+</div>
+
+<input
+type="checkbox"
+id="communityNotifications"
+checked>
+
+</div>
+
+<div class="list-row">
+
+<div class="list-main">
+
+<div class="list-title">
+Show Recommendations
+</div>
+
+<div class="list-meta">
+Personalized programming suggestions.
+</div>
+
+</div>
+
+<input
+type="checkbox"
+id="recommendations"
+checked>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div style="height:20px"></div>
+
+<div class="card">
+
+<h2>Privacy</h2>
+
+<div class="notice">
+
+Your Member Hub should use Supabase Row Level Security
+to control access to private member information.
+
+Never expose Supabase service-role credentials in
+browser code.
+
+</div>
+
+<div style="height:15px"></div>
+
+<div class="list">
+
+<div class="list-row">
+
+<div class="list-main">
+
+<div class="list-title">
+Public Profile
+</div>
+
+<div class="list-meta">
+Allow other members to see your public profile.
+</div>
+
+</div>
+
+<input
+type="checkbox"
+id="publicProfile"
+checked>
+
+</div>
+
+<div class="list-row">
+
+<div class="list-main">
+
+<div class="list-title">
+Watch Activity
+</div>
+
+<div class="list-meta">
+Allow eligible community features to use viewing activity.
+</div>
+
+</div>
+
+<input
+type="checkbox"
+id="watchActivity">
+
+</div>
+
+</div>
+
+</div>
+
+<div style="height:20px"></div>
+
+<div class="card">
+
+<h2>Session</h2>
+
+<p style="color:var(--muted);line-height:1.7">
+
+Your CrowRules account session is managed through
+Supabase Authentication.
+
+</p>
+
+<button
+class="btn btn-danger"
+data-signout>
+Sign Out
+</button>
+
+</div>
+
+<div style="height:20px"></div>
+
+<div class="card">
+
+<h2>Danger Zone</h2>
+
+<div class="notice">
+
+Account deletion should be implemented through a
+secure server-side process rather than directly
+deleting authentication records from browser code.
+
+</div>
+
+<div style="margin-top:15px">
+
+<button
+class="btn btn-danger"
+onclick="Crow.toast('Account deletion requires administrator/security workflow.')">
+Request Account Deletion
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+document.querySelectorAll(
+'input[type="checkbox"]'
+).forEach(input => {
+
+input.addEventListener("change",()=>{
+
+Crow.toast(
+"Preference changed. Connect your preferences table to persist this setting."
+);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

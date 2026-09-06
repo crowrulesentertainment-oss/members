@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1">
+
+<title>Edit Profile — CrowRules Member Hub</title>
+
+<link rel="stylesheet"
+      href="../assets/css/member-core.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/member-app.js"></script>
+
+</head>
+
+<body data-page="edit-profile">
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+
+  <div class="brand">
+    <div class="brand-title">
+      CROW<span>RULES</span>
+    </div>
+    <div class="brand-sub">
+      MEMBER HUB
+    </div>
+  </div>
+
+  <nav class="nav">
+
+    <div class="nav-section">Member</div>
+
+    <a data-page="dashboard"
+       href="member-dashboard.html">
+      ⌂ Dashboard
+    </a>
+
+    <a data-page="profile"
+       href="member-profile.html">
+      ◉ My Profile
+    </a>
+
+    <a data-page="edit-profile"
+       href="member-edit-profile.html">
+      ✎ Edit Profile
+    </a>
+
+    <div class="nav-section">My Library</div>
+
+    <a href="member-watch.html">▶ Watch</a>
+    <a href="member-favorites.html">★ Favorites</a>
+    <a href="member-my-list.html">＋ My List</a>
+    <a href="member-history.html">◷ Watch History</a>
+
+    <div class="nav-section">Community</div>
+
+    <a href="member-rewards.html">◆ Rewards</a>
+    <a href="member-leaderboard.html">♛ Leaderboard</a>
+    <a href="member-friends.html">♟ Friends</a>
+    <a href="member-community.html">☷ Community</a>
+    <a href="member-notifications.html">● Notifications</a>
+
+    <div class="nav-section">Explore</div>
+
+    <a href="member-shows.html">▣ Shows</a>
+    <a href="member-tv-guide.html">▤ TV Guide</a>
+    <a href="member-creators.html">♙ Creators</a>
+
+    <div class="sidebar-footer">
+
+      <a href="member-settings.html">
+        ⚙ Settings
+      </a>
+
+      <a href="#"
+         data-signout>
+        ↪ Sign Out
+      </a>
+
+    </div>
+
+  </nav>
+
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+
+  <button class="menu-btn" data-menu>
+    ☰
+  </button>
+
+  <div></div>
+
+  <div class="top-actions">
+
+    <a class="icon-btn"
+       href="member-notifications.html">
+      🔔
+    </a>
+
+    <a class="memberAvatar"
+       href="member-profile.html">
+      MR
+    </a>
+
+  </div>
+
+</header>
+
+<section class="content">
+
+  <div class="page-heading">
+
+    <h1>Edit Profile</h1>
+
+    <p>
+      Customize the profile other CrowRules members can see.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <form id="profileForm">
+
+      <div class="form-grid">
+
+        <div class="field">
+
+          <label>
+            Display Name
+          </label>
+
+          <input
+            id="displayName"
+            type="text"
+            maxlength="80"
+            placeholder="Your display name"
+            required>
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            Avatar URL
+          </label>
+
+          <input
+            id="avatarUrl"
+            type="url"
+            placeholder="https://...">
+
+        </div>
+
+        <div class="field full">
+
+          <label>
+            Bio
+          </label>
+
+          <textarea
+            id="bio"
+            maxlength="500"
+            placeholder="Tell the CrowRules community a little about yourself..."></textarea>
+
+        </div>
+
+      </div>
+
+      <div class="notice"
+           style="margin-top:18px">
+
+        Your account email is controlled by
+        Supabase Authentication and is not changed from
+        this profile editor.
+
+      </div>
+
+      <div class="actions"
+           style="margin-top:20px">
+
+        <button
+          class="btn btn-primary"
+          type="submit">
+          Save Profile
+        </button>
+
+        <a
+          class="btn"
+          href="member-profile.html">
+          Cancel
+        </a>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+</main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",async()=>{
+
+  const profile =
+    await Crow.profile();
+
+  if(!profile) return;
+
+  document.getElementById("displayName").value =
+    profile.display_name || "";
+
+  document.getElementById("avatarUrl").value =
+    profile.avatar_url || "";
+
+  document.getElementById("bio").value =
+    profile.bio || "";
+
+});
+
+document.getElementById("profileForm")
+.addEventListener("submit",async event=>{
+
+  event.preventDefault();
+
+  const client =
+    await Crow.client();
+
+  if(!client){
+
+    Crow.toast(
+      "Connect Supabase before saving profiles."
+    );
+
+    return;
+  }
+
+  const user =
+    await Crow.user();
+
+  if(!user){
+
+    Crow.toast(
+      "Please sign in first."
+    );
+
+    return;
+  }
+
+  const payload = {
+
+    id:user.id,
+
+    display_name:
+      document.getElementById("displayName").value.trim(),
+
+    avatar_url:
+      document.getElementById("avatarUrl").value.trim() || null,
+
+    bio:
+      document.getElementById("bio").value.trim() || null
+
+  };
+
+  const result =
+    await client
+      .from("cr_profiles")
+      .upsert(payload,{onConflict:"id"});
+
+  if(result.error){
+
+    console.error(result.error);
+
+    Crow.toast(
+      "Profile save failed: " +
+      result.error.message
+    );
+
+    return;
+  }
+
+  Crow.toast(
+    "Profile saved successfully."
+  );
+
+  setTimeout(()=>{
+    location.href =
+      "member-profile.html";
+  },700);
+
+});
+
+</script>
+
+</body>
+</html>

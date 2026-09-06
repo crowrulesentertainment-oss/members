@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#07080d">
+  <meta name="description"
+        content="CrowRules Member Hub Dashboard">
+
+  <title>Dashboard — CrowRules Member Hub</title>
+
+  <link rel="stylesheet"
+        href="../assets/css/member-core.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/supabase-config.js"></script>
+  <script src="../assets/js/member-app.js"></script>
+</head>
+
+<body data-page="dashboard">
+
+<div class="app">
+
+  <!-- =====================================================
+       SIDEBAR
+       ===================================================== -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+      CROW<span>RULES</span>
+      <br>
+      <small>MEMBER HUB</small>
+    </div>
+
+    <nav class="nav">
+
+      <div class="nav-label">
+        Member
+      </div>
+
+      <a href="member-dashboard.html"
+         data-page="dashboard">
+        ◈
+        <span>Dashboard</span>
+      </a>
+
+      <a href="member-profile.html"
+         data-page="profile">
+        ◉
+        <span>My Profile</span>
+      </a>
+
+      <a href="member-edit-profile.html"
+         data-page="edit">
+        ✎
+        <span>Edit Profile</span>
+      </a>
+
+      <a href="member-watch.html"
+         data-page="watch">
+        ▶
+        <span>Watch</span>
+      </a>
+
+      <a href="member-favorites.html"
+         data-page="favorites">
+        ♥
+        <span>My Favorites</span>
+      </a>
+
+      <a href="member-my-list.html"
+         data-page="list">
+        ☷
+        <span>My List</span>
+      </a>
+
+      <a href="member-history.html"
+         data-page="history">
+        ◴
+        <span>Watch History</span>
+      </a>
+
+      <div class="nav-label">
+        Community
+      </div>
+
+      <a href="member-rewards.html"
+         data-page="rewards">
+        ★
+        <span>Points & Rewards</span>
+      </a>
+
+      <a href="member-leaderboard.html"
+         data-page="leaderboard">
+        ♛
+        <span>Leaderboard</span>
+      </a>
+
+      <a href="member-friends.html"
+         data-page="friends">
+        ♟
+        <span>Friends</span>
+      </a>
+
+      <a href="member-community.html"
+         data-page="community">
+        ◎
+        <span>Community</span>
+      </a>
+
+      <a href="member-notifications.html"
+         data-page="notifications">
+        ♢
+        <span>Notifications</span>
+      </a>
+
+      <div class="nav-label">
+        CrowRules TV
+      </div>
+
+      <a href="member-shows.html"
+         data-page="shows">
+        ▣
+        <span>Shows</span>
+      </a>
+
+      <a href="member-tv-guide.html"
+         data-page="guide">
+        ▤
+        <span>TV Guide</span>
+      </a>
+
+      <a href="member-creators.html"
+         data-page="creators">
+        ✦
+        <span>Creator Content</span>
+      </a>
+
+      <div class="nav-label">
+        Account
+      </div>
+
+      <a href="member-settings.html"
+         data-page="settings">
+        ⚙
+        <span>Settings</span>
+      </a>
+
+      <a href="#"
+         data-signout>
+        ⇥
+        <span>Sign Out</span>
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+  <main class="main">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+      <button
+        class="icon-btn mobile-menu"
+        type="button"
+        data-menu
+        aria-label="Open menu">
+        ☰
+      </button>
+
+      <div class="topbar-title">
+        CrowRules Member Hub
+      </div>
+
+      <div class="top-actions">
+
+        <a
+          class="icon-btn"
+          href="member-notifications.html"
+          title="Notifications">
+          🔔
+        </a>
+
+        <a
+          class="avatar-btn memberAvatar"
+          href="member-profile.html"
+          aria-label="My profile">
+          CR
+        </a>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENT
+         ===================================================== -->
+
+    <div class="content">
+
+
+      <!-- HERO -->
+
+      <section class="hero">
+
+        <div class="eyebrow">
+          Member Dashboard
+        </div>
+
+        <h1>
+          Welcome back,
+          <span id="memberName">Member</span>.
+        </h1>
+
+        <p>
+          Your CrowRules home base for watching,
+          discovering shows, managing your profile,
+          connecting with the community and earning rewards.
+        </p>
+
+        <div class="actions">
+
+          <a
+            class="btn primary"
+            href="member-watch.html">
+            ▶ Start Watching
+          </a>
+
+          <a
+            class="btn"
+            href="member-profile.html">
+            View Profile
+          </a>
+
+          <a
+            class="btn"
+            href="member-tv-guide.html">
+            TV Guide
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           MEMBER STATS
+           ===================================================== -->
+
+      <section class="grid g4">
+
+        <article class="card">
+
+          <div class="stat-label">
+            Watch Hours
+          </div>
+
+          <div
+            class="stat"
+            id="watchHours">
+            0
+          </div>
+
+          <div class="muted">
+            Total member viewing
+          </div>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="stat-label">
+            Points
+          </div>
+
+          <div
+            class="stat"
+            id="points">
+            0
+          </div>
+
+          <div class="muted">
+            Rewards balance
+          </div>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="stat-label">
+            Favorites
+          </div>
+
+          <div
+            class="stat"
+            id="favoriteCount">
+            0
+          </div>
+
+          <div class="muted">
+            Saved programs
+          </div>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="stat-label">
+            Leaderboard
+          </div>
+
+          <div
+            class="stat"
+            id="memberRank">
+            —
+          </div>
+
+          <div class="muted">
+            Current position
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- =====================================================
+           CONTINUE WATCHING
+           ===================================================== -->
+
+      <div class="section-head">
+
+        <h2>
+          Continue Watching
+        </h2>
+
+        <a
+          class="btn"
+          href="member-history.html">
+          View History
+        </a>
+
+      </div>
+
+
+      <section class="media-grid">
+
+
+        <article class="media">
+
+          <div class="media-art">
+            TACOMA<br>NIGHTS
+          </div>
+
+          <div class="media-body">
+
+            <div class="media-title">
+              Tacoma Nights
+            </div>
+
+            <div class="muted">
+              Continue watching
+            </div>
+
+            <span class="tag">
+              ORIGINAL
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <article class="media">
+
+          <div class="media-art">
+            CROWRULES<br>TV
+          </div>
+
+          <div class="media-body">
+
+            <div class="media-title">
+              CrowRules TV Live
+            </div>
+
+            <div class="muted">
+              Live programming
+            </div>
+
+            <span class="tag">
+              LIVE
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <article class="media">
+
+          <div class="media-art">
+            BACK DECK<br>LIVE
+          </div>
+
+          <div class="media-body">
+
+            <div class="media-title">
+              Back Deck Live
+            </div>
+
+            <div class="muted">
+              Weekly live programming
+            </div>
+
+            <span class="tag">
+              LIVE SHOW
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <article class="media">
+
+          <div class="media-art">
+            CROW<br>ORIGINALS
+          </div>
+
+          <div class="media-body">
+
+            <div class="media-title">
+              CrowRules Originals
+            </div>
+
+            <div class="muted">
+              Original programming
+            </div>
+
+            <span class="tag">
+              EXPLORE
+            </span>
+
+          </div>
+
+        </article>
+
+
+      </section>
+
+
+      <!-- =====================================================
+           QUICK ACCESS
+           ===================================================== -->
+
+      <div class="section-head">
+
+        <h2>
+          Quick Access
+        </h2>
+
+      </div>
+
+
+      <section class="grid g3">
+
+
+        <a
+          class="card"
+          href="member-favorites.html">
+
+          <h3>
+            ♥ My Favorites
+          </h3>
+
+          <p class="muted">
+            Quickly access the shows and episodes
+            you've saved.
+          </p>
+
+        </a>
+
+
+        <a
+          class="card"
+          href="member-my-list.html">
+
+          <h3>
+            ☷ My List
+          </h3>
+
+          <p class="muted">
+            Keep programming you want to watch
+            later in one place.
+          </p>
+
+        </a>
+
+
+        <a
+          class="card"
+          href="member-rewards.html">
+
+          <h3>
+            ★ Rewards
+          </h3>
+
+          <p class="muted">
+            View points, badges, milestones and
+            member achievements.
+          </p>
+
+        </a>
+
+
+        <a
+          class="card"
+          href="member-community.html">
+
+          <h3>
+            ◎ Community
+          </h3>
+
+          <p class="muted">
+            Connect with other members and
+            participate in CrowRules discussions.
+          </p>
+
+        </a>
+
+
+        <a
+          class="card"
+          href="member-creators.html">
+
+          <h3>
+            ✦ Creators
+          </h3>
+
+          <p class="muted">
+            Discover independent creators and
+            CrowRules original content.
+          </p>
+
+        </a>
+
+
+        <a
+          class="card"
+          href="member-tv-guide.html">
+
+          <h3>
+            ▤ TV Guide
+          </h3>
+
+          <p class="muted">
+            See what's playing now and what's
+            coming up next.
+          </p>
+
+        </a>
+
+      </section>
+
+
+      <!-- =====================================================
+           COMMUNITY SNAPSHOT
+           ===================================================== -->
+
+      <div class="section-head">
+
+        <h2>
+          Member Snapshot
+        </h2>
+
+      </div>
+
+
+      <section class="grid g3">
+
+
+        <article class="card">
+
+          <div class="kpi">
+            <strong>
+              Friends
+            </strong>
+
+            <strong id="friendCount">
+              0
+            </strong>
+          </div>
+
+          <p class="muted">
+            Your CrowRules connections.
+          </p>
+
+          <a
+            class="btn"
+            href="member-friends.html">
+            View Friends
+          </a>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="kpi">
+            <strong>
+              Notifications
+            </strong>
+
+            <strong id="notificationCount">
+              0
+            </strong>
+          </div>
+
+          <p class="muted">
+            New member activity and updates.
+          </p>
+
+          <a
+            class="btn"
+            href="member-notifications.html">
+            View Notifications
+          </a>
+
+        </article>
+
+
+        <article class="card">
+
+          <div class="kpi">
+            <strong>
+              Profile
+            </strong>
+
+            <strong>
+              100%
+            </strong>
+          </div>
+
+          <p class="muted">
+            Keep your CrowRules member profile current.
+          </p>
+
+          <a
+            class="btn"
+            href="member-edit-profile.html">
+            Edit Profile
+          </a>
+
+        </article>
+
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+  class="toast"
+  id="toast"
+  role="status"
+  aria-live="polite">
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD DATA HOOK
+     ========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+  /*
+   * The shared member-app.js handles authentication
+   * and the member profile.
+   *
+   * These elements are intentionally initialized with
+   * safe defaults until the exact CrowRules database
+   * tables/columns are connected.
+   */
+
+  const client = await Crow.client();
+
+  if (!client) {
+    console.info(
+      "CrowRules Member Hub: Supabase is not configured yet."
+    );
+    return;
+  }
+
+  const user = await Crow.user();
+
+  if (!user) {
+    return;
+  }
+
+  /*
+   * Future database-backed dashboard queries belong here.
+   *
+   * Example:
+   *
+   * - watch history
+   * - watch hours
+   * - favorites
+   * - points
+   * - leaderboard
+   * - friends
+   * - notifications
+   *
+   * They should be connected to the exact existing
+   * CrowRules schema rather than assuming table names.
+   */
+
+});
+
+</script>
+
+</body>
+</html>

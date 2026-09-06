@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>My Profile — CrowRules Member Hub</title>
+
+<link rel="stylesheet"
+      href="../assets/css/member-core.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/member-app.js"></script>
+</head>
+
+<body data-page="profile">
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+
+  <div class="brand">
+    <div class="brand-title">
+      CROW<span>RULES</span>
+    </div>
+    <div class="brand-sub">
+      MEMBER HUB
+    </div>
+  </div>
+
+  <nav class="nav">
+
+    <div class="nav-section">Member</div>
+
+    <a data-page="dashboard"
+       href="member-dashboard.html">
+      <span class="nav-icon">⌂</span>
+      Dashboard
+    </a>
+
+    <a data-page="profile"
+       href="member-profile.html">
+      <span class="nav-icon">◉</span>
+      My Profile
+    </a>
+
+    <a data-page="edit-profile"
+       href="member-edit-profile.html">
+      <span class="nav-icon">✎</span>
+      Edit Profile
+    </a>
+
+    <div class="nav-section">My Library</div>
+
+    <a data-page="watch" href="member-watch.html">
+      <span class="nav-icon">▶</span>
+      Watch
+    </a>
+
+    <a data-page="favorites" href="member-favorites.html">
+      <span class="nav-icon">★</span>
+      Favorites
+    </a>
+
+    <a data-page="my-list" href="member-my-list.html">
+      <span class="nav-icon">＋</span>
+      My List
+    </a>
+
+    <a data-page="history" href="member-history.html">
+      <span class="nav-icon">◷</span>
+      Watch History
+    </a>
+
+    <div class="nav-section">Community</div>
+
+    <a data-page="rewards" href="member-rewards.html">
+      <span class="nav-icon">◆</span>
+      Rewards
+    </a>
+
+    <a data-page="leaderboard" href="member-leaderboard.html">
+      <span class="nav-icon">♛</span>
+      Leaderboard
+    </a>
+
+    <a data-page="friends" href="member-friends.html">
+      <span class="nav-icon">♟</span>
+      Friends
+    </a>
+
+    <a data-page="community" href="member-community.html">
+      <span class="nav-icon">☷</span>
+      Community
+    </a>
+
+    <a data-page="notifications"
+       href="member-notifications.html">
+      <span class="nav-icon">●</span>
+      Notifications
+    </a>
+
+    <div class="nav-section">Explore</div>
+
+    <a data-page="shows" href="member-shows.html">
+      <span class="nav-icon">▣</span>
+      Shows
+    </a>
+
+    <a data-page="tv-guide" href="member-tv-guide.html">
+      <span class="nav-icon">▤</span>
+      TV Guide
+    </a>
+
+    <a data-page="creators" href="member-creators.html">
+      <span class="nav-icon">♙</span>
+      Creators
+    </a>
+
+    <div class="sidebar-footer">
+
+      <a data-page="settings"
+         href="member-settings.html">
+        <span class="nav-icon">⚙</span>
+        Settings
+      </a>
+
+      <a href="#"
+         data-signout>
+        <span class="nav-icon">↪</span>
+        Sign Out
+      </a>
+
+    </div>
+
+  </nav>
+
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+
+  <button class="menu-btn" data-menu>
+    ☰
+  </button>
+
+  <div></div>
+
+  <div class="top-actions">
+
+    <a class="icon-btn"
+       href="member-notifications.html">
+      🔔
+    </a>
+
+    <a class="memberAvatar"
+       href="member-profile.html">
+      <span>MR</span>
+    </a>
+
+  </div>
+
+</header>
+
+<section class="content">
+
+  <div class="page-heading">
+
+    <h1>My Profile</h1>
+
+    <p>
+      Your CrowRules member identity and public profile.
+    </p>
+
+  </div>
+
+  <div class="grid grid-2">
+
+    <div class="card">
+
+      <div class="profile-header">
+
+        <div class="avatar-lg memberAvatar">
+          MR
+        </div>
+
+        <div>
+
+          <div class="profile-name"
+               id="memberName">
+            Member
+          </div>
+
+          <div class="profile-email"
+               id="memberEmail">
+            Loading...
+          </div>
+
+          <div style="margin-top:10px">
+            <span class="badge">
+              CROWRULES MEMBER
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div style="margin-top:25px">
+
+        <div class="actions">
+
+          <a class="btn btn-primary"
+             href="member-edit-profile.html">
+            Edit Profile
+          </a>
+
+          <a class="btn"
+             href="member-settings.html">
+            Account Settings
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <h3>About Me</h3>
+
+      <p id="profileBio"
+         style="color:var(--muted);line-height:1.7">
+        Your member bio will appear here.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div style="height:18px"></div>
+
+  <div class="grid grid-4">
+
+    <div class="card stat">
+      <div class="stat-label">Watch Hours</div>
+      <div class="stat-value">0</div>
+      <div class="stat-meta">Start watching</div>
+    </div>
+
+    <div class="card stat">
+      <div class="stat-label">Points</div>
+      <div class="stat-value">0</div>
+      <div class="stat-meta">Earn more</div>
+    </div>
+
+    <div class="card stat">
+      <div class="stat-label">Favorites</div>
+      <div class="stat-value">0</div>
+      <div class="stat-meta">Saved titles</div>
+    </div>
+
+    <div class="card stat">
+      <div class="stat-label">Friends</div>
+      <div class="stat-value">0</div>
+      <div class="stat-meta">Community</div>
+    </div>
+
+  </div>
+
+  <div style="height:18px"></div>
+
+  <div class="card">
+
+    <h2>Member Activity</h2>
+
+    <div class="empty">
+
+      <div class="empty-icon">◉</div>
+
+      Your activity will appear here as you use
+      CrowRules TV and the Member Hub.
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",async()=>{
+
+  const profile =
+    await Crow.profile();
+
+  if(profile){
+
+    const bio =
+      document.getElementById("profileBio");
+
+    if(bio){
+
+      bio.textContent =
+        profile.bio ||
+        "No member bio has been added yet.";
+
+    }
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>

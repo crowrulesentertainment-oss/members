@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My List — CrowRules Member Hub</title>
+<link rel="stylesheet" href="../assets/css/member-core.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/member-app.js"></script>
+</head>
+
+<body data-page="my-list">
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+<div class="brand">
+<div class="brand-title">CROW<span>RULES</span></div>
+<div class="brand-sub">MEMBER HUB</div>
+</div>
+
+<nav class="nav">
+
+<div class="nav-section">Member</div>
+<a href="member-dashboard.html">⌂ Dashboard</a>
+<a href="member-profile.html">◉ My Profile</a>
+<a href="member-edit-profile.html">✎ Edit Profile</a>
+
+<div class="nav-section">My Library</div>
+<a href="member-watch.html">▶ Watch</a>
+<a href="member-favorites.html">★ Favorites</a>
+<a data-page="my-list" href="member-my-list.html">＋ My List</a>
+<a href="member-history.html">◷ Watch History</a>
+
+<div class="nav-section">Community</div>
+<a href="member-rewards.html">◆ Rewards</a>
+<a href="member-leaderboard.html">♛ Leaderboard</a>
+<a href="member-friends.html">♟ Friends</a>
+<a href="member-community.html">☷ Community</a>
+<a href="member-notifications.html">● Notifications</a>
+
+<div class="nav-section">Explore</div>
+<a href="member-shows.html">▣ Shows</a>
+<a href="member-tv-guide.html">▤ TV Guide</a>
+<a href="member-creators.html">♙ Creators</a>
+
+<div class="sidebar-footer">
+<a href="member-settings.html">⚙ Settings</a>
+<a href="#" data-signout>↪ Sign Out</a>
+</div>
+
+</nav>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<button class="menu-btn" data-menu>☰</button>
+<div></div>
+<div class="top-actions">
+<a class="icon-btn" href="member-notifications.html">🔔</a>
+<a class="memberAvatar" href="member-profile.html">MR</a>
+</div>
+</header>
+
+<section class="content">
+
+<div class="page-heading">
+<h1>My List</h1>
+<p>Save programs you want to watch later.</p>
+</div>
+
+<div class="hero">
+<h1>Your Watchlist</h1>
+<p>
+Keep track of CrowRules TV programs, originals,
+live events and creator content you want to watch.
+</p>
+
+<div class="actions">
+<a class="btn btn-primary" href="member-shows.html">
+Browse Shows
+</a>
+<a class="btn" href="member-tv-guide.html">
+TV Guide
+</a>
+</div>
+</div>
+
+<div class="card">
+<div class="empty">
+<div class="empty-icon">＋</div>
+<h3>Your list is empty</h3>
+<p>
+Add shows and programs to your list and they will
+appear here.
+</p>
+<a class="btn btn-primary" href="member-shows.html">
+Find Something to Watch
+</a>
+</div>
+</div>
+
+</section>
+</main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+</body>
+</html>

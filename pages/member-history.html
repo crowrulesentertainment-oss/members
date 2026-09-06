@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Watch History — CrowRules Member Hub</title>
+<link rel="stylesheet" href="../assets/css/member-core.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/member-app.js"></script>
+</head>
+
+<body data-page="history">
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+
+<div class="brand">
+<div class="brand-title">CROW<span>RULES</span></div>
+<div class="brand-sub">MEMBER HUB</div>
+</div>
+
+<nav class="nav">
+
+<div class="nav-section">Member</div>
+<a href="member-dashboard.html">⌂ Dashboard</a>
+<a href="member-profile.html">◉ My Profile</a>
+<a href="member-edit-profile.html">✎ Edit Profile</a>
+
+<div class="nav-section">My Library</div>
+<a href="member-watch.html">▶ Watch</a>
+<a href="member-favorites.html">★ Favorites</a>
+<a href="member-my-list.html">＋ My List</a>
+<a data-page="history" href="member-history.html">◷ Watch History</a>
+
+<div class="nav-section">Community</div>
+<a href="member-rewards.html">◆ Rewards</a>
+<a href="member-leaderboard.html">♛ Leaderboard</a>
+<a href="member-friends.html">♟ Friends</a>
+<a href="member-community.html">☷ Community</a>
+<a href="member-notifications.html">● Notifications</a>
+
+<div class="nav-section">Explore</div>
+<a href="member-shows.html">▣ Shows</a>
+<a href="member-tv-guide.html">▤ TV Guide</a>
+<a href="member-creators.html">♙ Creators</a>
+
+<div class="sidebar-footer">
+<a href="member-settings.html">⚙ Settings</a>
+<a href="#" data-signout>↪ Sign Out</a>
+</div>
+
+</nav>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<button class="menu-btn" data-menu>☰</button>
+<div></div>
+
+<div class="top-actions">
+<a class="icon-btn" href="member-notifications.html">🔔</a>
+<a class="memberAvatar" href="member-profile.html">MR</a>
+</div>
+</header>
+
+<section class="content">
+
+<div class="page-heading">
+<h1>Watch History</h1>
+<p>Review the programs you've recently watched.</p>
+</div>
+
+<div class="grid grid-3">
+
+<div class="card stat">
+<div class="stat-label">Total Hours</div>
+<div class="stat-value">0</div>
+<div class="stat-meta">Watch time</div>
+</div>
+
+<div class="card stat">
+<div class="stat-label">Programs</div>
+<div class="stat-value">0</div>
+<div class="stat-meta">Watched</div>
+</div>
+
+<div class="card stat">
+<div class="stat-label">This Week</div>
+<div class="stat-value">0</div>
+<div class="stat-meta">Hours watched</div>
+</div>
+
+</div>
+
+<div style="height:20px"></div>
+
+<div class="card">
+
+<div class="actions"
+style="justify-content:space-between">
+
+<h2>Recently Watched</h2>
+
+<button class="btn">
+Clear History
+</button>
+
+</div>
+
+<div class="empty">
+<div class="empty-icon">◷</div>
+<p>
+Your watch history will appear here after you
+start watching CrowRules programming.
+</p>
+<a class="btn btn-primary" href="member-watch.html">
+Start Watching
+</a>
+</div>
+
+</div>
+
+</section>
+
+</main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rewards — CrowRules Member Hub</title>
+<link rel="stylesheet" href="../assets/css/member-core.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/member-app.js"></script>
+</head>
+
+<body data-page="rewards">
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+
+<div class="brand">
+<div class="brand-title">CROW<span>RULES</span></div>
+<div class="brand-sub">MEMBER HUB</div>
+</div>
+
+<nav class="nav">
+
+<div class="nav-section">Member</div>
+<a href="member-dashboard.html">⌂ Dashboard</a>
+<a href="member-profile.html">◉ My Profile</a>
+<a href="member-edit-profile.html">✎ Edit Profile</a>
+
+<div class="nav-section">My Library</div>
+<a href="member-watch.html">▶ Watch</a>
+<a href="member-favorites.html">★ Favorites</a>
+<a href="member-my-list.html">＋ My List</a>
+<a href="member-history.html">◷ Watch History</a>
+
+<div class="nav-section">Community</div>
+<a data-page="rewards" href="member-rewards.html">◆ Rewards</a>
+<a href="member-leaderboard.html">♛ Leaderboard</a>
+<a href="member-friends.html">♟ Friends</a>
+<a href="member-community.html">☷ Community</a>
+<a href="member-notifications.html">● Notifications</a>
+
+<div class="nav-section">Explore</div>
+<a href="member-shows.html">▣ Shows</a>
+<a href="member-tv-guide.html">▤ TV Guide</a>
+<a href="member-creators.html">♙ Creators</a>
+
+<div class="sidebar-footer">
+<a href="member-settings.html">⚙ Settings</a>
+<a href="#" data-signout>↪ Sign Out</a>
+</div>
+
+</nav>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<button class="menu-btn" data-menu>☰</button>
+<div></div>
+<div class="top-actions">
+<a class="icon-btn" href="member-notifications.html">🔔</a>
+<a class="memberAvatar" href="member-profile.html">MR</a>
+</div>
+</header>
+
+<section class="content">
+
+<div class="page-heading">
+<h1>Rewards</h1>
+<p>Earn CrowPoints by participating in the CrowRules community.</p>
+</div>
+
+<div class="hero">
+
+<h1>0 CrowPoints</h1>
+
+<p>
+Your rewards balance will grow as you watch,
+participate, interact and support CrowRules programming.
+</p>
+
+<div class="progress">
+<span style="width:0%"></span>
+</div>
+
+<p>
+0 / 1,000 points toward the next member level.
+</p>
+
+</div>
+
+<div class="grid grid-3">
+
+<div class="card">
+<h3>Watch</h3>
+<p style="color:var(--muted)">
+Earn points from eligible viewing activity.
+</p>
+<span class="badge">+POINTS</span>
+</div>
+
+<div class="card">
+<h3>Community</h3>
+<p style="color:var(--muted)">
+Participate in community discussions and events.
+</p>
+<span class="badge">+POINTS</span>
+</div>
+
+<div class="card">
+<h3>Discover</h3>
+<p style="color:var(--muted)">
+Explore CrowRules creators and original programs.
+</p>
+<span class="badge">+POINTS</span>
+</div>
+
+</div>
+
+<div style="height:20px"></div>
+
+<div class="card">
+
+<h2>Available Rewards</h2>
+
+<div class="empty">
+<div class="empty-icon">◆</div>
+Rewards will appear here when the rewards
+catalog is enabled.
+</div>
+
+</div>
+
+</section>
+</main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+</body>
+</html>

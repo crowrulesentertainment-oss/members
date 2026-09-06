@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Community — CrowRules Member Hub</title>
+<link rel="stylesheet" href="../assets/css/member-core.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/member-app.js"></script>
+</head>
+
+<body data-page="community">
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+
+<div class="brand">
+<div class="brand-title">CROW<span>RULES</span></div>
+<div class="brand-sub">MEMBER HUB</div>
+</div>
+
+<nav class="nav">
+
+<div class="nav-section">Member</div>
+<a href="member-dashboard.html">⌂ Dashboard</a>
+<a href="member-profile.html">◉ My Profile</a>
+<a href="member-edit-profile.html">✎ Edit Profile</a>
+
+<div class="nav-section">My Library</div>
+<a href="member-watch.html">▶ Watch</a>
+<a href="member-favorites.html">★ Favorites</a>
+<a href="member-my-list.html">＋ My List</a>
+<a href="member-history.html">◷ Watch History</a>
+
+<div class="nav-section">Community</div>
+<a href="member-rewards.html">◆ Rewards</a>
+<a href="member-leaderboard.html">♛ Leaderboard</a>
+<a href="member-friends.html">♟ Friends</a>
+<a data-page="community" href="member-community.html">☷ Community</a>
+<a href="member-notifications.html">● Notifications</a>
+
+<div class="nav-section">Explore</div>
+<a href="member-shows.html">▣ Shows</a>
+<a href="member-tv-guide.html">▤ TV Guide</a>
+<a href="member-creators.html">♙ Creators</a>
+
+<div class="sidebar-footer">
+<a href="member-settings.html">⚙ Settings</a>
+<a href="#" data-signout>↪ Sign Out</a>
+</div>
+
+</nav>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<button class="menu-btn" data-menu>☰</button>
+<div></div>
+<div class="top-actions">
+<a class="icon-btn" href="member-notifications.html">🔔</a>
+<a class="memberAvatar" href="member-profile.html">MR</a>
+</div>
+</header>
+
+<section class="content">
+
+<div class="page-heading">
+<h1>Community</h1>
+<p>The CrowRules member community.</p>
+</div>
+
+<div class="hero">
+
+<h1>Welcome to the Rookery</h1>
+
+<p>
+A community space for CrowRules members to discuss
+shows, creators, events, sports, music, entertainment
+and everything happening across the CrowRules universe.
+</p>
+
+<div class="actions">
+<button class="btn btn-primary"
+onclick="Crow.toast('Community posting will be connected to Supabase.')">
+Create Post
+</button>
+
+<button class="btn"
+onclick="Crow.toast('Community search coming soon.')">
+Search
+</button>
+</div>
+
+</div>
+
+<div class="grid grid-3">
+
+<div class="card">
+<h3>General Discussion</h3>
+<p style="color:var(--muted)">
+Talk about CrowRules and the latest programming.
+</p>
+<span class="badge">COMMUNITY</span>
+</div>
+
+<div class="card">
+<h3>CrowRules TV</h3>
+<p style="color:var(--muted)">
+Discuss episodes, channels and live programming.
+</p>
+<span class="badge">TV</span>
+</div>
+
+<div class="card">
+<h3>Creators</h3>
+<p style="color:var(--muted)">
+Meet and support CrowRules creators.
+</p>
+<span class="badge">CREATORS</span>
+</div>
+
+</div>
+
+<div style="height:20px"></div>
+
+<div class="card">
+
+<h2>Latest Posts</h2>
+
+<div class="empty">
+<div class="empty-icon">☷</div>
+No community posts are available yet.
+</div>
+
+</div>
+
+</section>
+</main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+</body>
+</html>
