@@ -1,253 +1,344 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#05060a">
+<title>TV Guide — CrowRules Member Hub</title>
 
-<meta
-  name="viewport"
-  content="width=device-width,initial-scale=1"
->
+<link rel="stylesheet" href="../assets/css/member-core.css">
 
-<title>CrowRules Member Hub — TV Guide</title>
-
-<link
-  rel="stylesheet"
-  href="../assets/css/member-core.css"
->
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/member-app.js"></script>
 </head>
 
 <body data-page="tv-guide">
 
 <div class="app">
 
-  <aside class="sidebar" id="sidebar">
+<aside class="sidebar" id="sidebar">
 
-    <div class="brand">
+<div class="brand">
+<div class="brand-title">CROW<span>RULES</span></div>
+<div class="brand-sub">MEMBER HUB</div>
+</div>
 
-      <div class="brand-title">
-        CROW<span>RULES</span>
-      </div>
+<nav class="nav">
 
-      <div class="brand-sub">
-        MEMBER HUB
-      </div>
+<div class="nav-section">Member</div>
 
-    </div>
+<a href="member-dashboard.html">⌂ Dashboard</a>
+<a href="member-profile.html">◉ My Profile</a>
+<a href="member-edit-profile.html">✎ Edit Profile</a>
 
-    <div class="nav">
+<div class="nav-section">My Library</div>
 
-      <div class="nav-section">
-        Member
-      </div>
+<a href="member-watch.html">▶ Watch</a>
+<a href="member-favorites.html">★ Favorites</a>
+<a href="member-my-list.html">＋ My List</a>
+<a href="member-history.html">◷ Watch History</a>
 
-      <a href="member-dashboard.html"
-         data-page="dashboard">
-        ⌂ Dashboard
-      </a>
+<div class="nav-section">Community</div>
 
-      <a href="member-profile.html"
-         data-page="profile">
-        ◉ My Profile
-      </a>
+<a href="member-rewards.html">◆ Rewards</a>
+<a href="member-leaderboard.html">♛ Leaderboard</a>
+<a href="member-friends.html">♟ Friends</a>
+<a href="member-community.html">☷ Community</a>
+<a href="member-notifications.html">● Notifications</a>
 
-      <a href="member-edit-profile.html"
-         data-page="edit-profile">
-        ✎ Edit Profile
-      </a>
+<div class="nav-section">Explore</div>
 
-      <div class="nav-section">
-        Library
-      </div>
+<a href="member-shows.html">▣ Shows</a>
+<a data-page="tv-guide" href="member-tv-guide.html">▤ TV Guide</a>
+<a href="member-creators.html">♙ Creators</a>
 
-      <a href="member-watch.html"
-         data-page="watch">
-        ▶ Watch
-      </a>
+<div class="sidebar-footer">
+<a href="member-settings.html">⚙ Settings</a>
+<a href="#" data-signout>↪ Sign Out</a>
+</div>
 
-      <a href="member-favorites.html"
-         data-page="favorites">
-        ♥ Favorites
-      </a>
+</nav>
+</aside>
 
-      <a href="member-my-list.html"
-         data-page="my-list">
-        ☰ My List
-      </a>
+<main class="main">
 
-      <a href="member-history.html"
-         data-page="history">
-        ◷ Watch History
-      </a>
+<header class="topbar">
 
-      <div class="nav-section">
-        CrowRules TV
-      </div>
+<button class="menu-btn" data-menu>☰</button>
 
-      <a href="member-shows.html"
-         data-page="shows">
-        ▣ Shows
-      </a>
+<div></div>
 
-      <a href="member-tv-guide.html"
-         data-page="tv-guide">
-        ▤ TV Guide
-      </a>
+<div class="top-actions">
 
-      <a href="member-creators.html"
-         data-page="creators">
-        ★ Creators
-      </a>
+<a class="icon-btn"
+href="member-notifications.html">
+🔔
+</a>
 
-      <div class="nav-section">
-        Community
-      </div>
-
-      <a href="member-rewards.html"
-         data-page="rewards">
-        ◆ Rewards
-      </a>
-
-      <a href="member-leaderboard.html"
-         data-page="leaderboard">
-        ♛ Leaderboard
-      </a>
-
-      <a href="member-friends.html"
-         data-page="friends">
-        ♣ Friends
-      </a>
-
-      <a href="member-community.html"
-         data-page="community">
-        ☷ Community
-      </a>
-
-      <a href="member-notifications.html"
-         data-page="notifications">
-        ● Notifications
-      </a>
-
-      <div class="sidebar-footer">
-
-        <a href="member-settings.html"
-           data-page="settings">
-          ⚙ Settings
-        </a>
-
-        <a href="#"
-           data-signout>
-          ⇥ Sign Out
-        </a>
-
-      </div>
-
-    </div>
-
-  </aside>
-
-
-  <main class="main">
-
-    <header class="topbar">
-
-      <button
-        class="menu-btn"
-        data-menu
-      >
-        ☰
-      </button>
-
-      <div></div>
-
-      <div class="top-actions">
-
-        <a
-          class="icon-btn"
-          href="member-notifications.html"
-        >
-          ●
-        </a>
-
-        <a
-          class="memberAvatar"
-          href="member-profile.html"
-        >
-          M
-        </a>
-
-      </div>
-
-    </header>
-
-
-    <section class="content">
-
-      <div class="page-heading">
-
-        <h1>
-          TV Guide
-        </h1>
-
-        <p>
-          Upcoming published CrowRules TV programming.
-        </p>
-
-      </div>
-
-
-      <div
-        id="memberError"
-        class="notice"
-        style="display:none;margin-bottom:20px"
-      ></div>
-
-
-      <div class="card">
-
-        <h2>
-          Upcoming Programming
-        </h2>
-
-        <div
-          id="guideList"
-          class="list"
-        >
-
-          <div class="empty">
-
-            <div class="empty-icon">
-              📺
-            </div>
-
-            Loading TV Guide...
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
+<a class="memberAvatar"
+href="member-profile.html">
+MR
+</a>
 
 </div>
 
+</header>
 
-<div id="toast" class="toast"></div>
+<section class="content">
 
+<div class="page-heading">
 
-<script
-  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-></script>
+<h1>TV Guide</h1>
 
-<script src="../assets/js/supabase-config.js"></script>
+<p>
+See what's scheduled across the CrowRules TV network.
+</p>
 
-<script src="../assets/js/member-app.js"></script>
+</div>
+
+<div class="hero">
+
+<h1>CrowRules TV Guide</h1>
+
+<p>
+Find live programs, premieres, originals, entertainment
+and upcoming CrowRules programming.
+</p>
+
+<div class="actions">
+
+<button class="btn btn-primary"
+onclick="selectDay('today')">
+Today
+</button>
+
+<button class="btn"
+onclick="selectDay('tomorrow')">
+Tomorrow
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="actions">
+
+<button class="btn btn-primary"
+id="todayBtn"
+onclick="selectDay('today')">
+TODAY
+</button>
+
+<button class="btn"
+id="tomorrowBtn"
+onclick="selectDay('tomorrow')">
+TOMORROW
+</button>
+
+</div>
+
+</div>
+
+<div style="height:18px"></div>
+
+<div class="card">
+
+<h2 id="guideTitle">
+Today's Programming
+</h2>
+
+<div class="list">
+
+<div class="list-row">
+
+<div style="width:75px">
+
+<strong>10 PM</strong>
+
+</div>
+
+<div class="list-main">
+
+<div class="list-title">
+Tacoma Nights
+</div>
+
+<div class="list-meta">
+CrowRules Original • Friday Premiere
+</div>
+
+</div>
+
+<span class="badge">
+ORIGINAL
+</span>
+
+</div>
+
+<div class="list-row">
+
+<div style="width:75px">
+
+<strong>11 PM</strong>
+
+</div>
+
+<div class="list-main">
+
+<div class="list-title">
+CrowRules Originals
+</div>
+
+<div class="list-meta">
+Original programming
+</div>
+
+</div>
+
+<span class="badge">
+TV
+</span>
+
+</div>
+
+<div class="list-row">
+
+<div style="width:75px">
+
+<strong>12 AM</strong>
+
+</div>
+
+<div class="list-main">
+
+<div class="list-title">
+Overnight Programming
+</div>
+
+<div class="list-meta">
+CrowRules TV overnight block
+</div>
+
+</div>
+
+<span class="badge">
+LIVE
+</span>
+
+</div>
+
+<div class="list-row">
+
+<div style="width:75px">
+
+<strong>3 PM</strong>
+
+</div>
+
+<div class="list-main">
+
+<div class="list-title">
+Back Deck Live
+</div>
+
+<div class="list-meta">
+Community live programming
+</div>
+
+</div>
+
+<span class="badge">
+LIVE
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div style="height:18px"></div>
+
+<div class="card">
+
+<h2>Live Now</h2>
+
+<div class="notice">
+
+<span class="badge">LIVE</span>
+
+&nbsp;
+
+Live channel status will automatically connect to the
+CrowRules TV schedule when the production schedule
+database is enabled.
+
+</div>
+
+<div style="margin-top:15px">
+
+<a class="btn btn-primary"
+href="member-watch.html">
+Watch CrowRules TV
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+function selectDay(day){
+
+const title =
+document.getElementById("guideTitle");
+
+const today =
+document.getElementById("todayBtn");
+
+const tomorrow =
+document.getElementById("tomorrowBtn");
+
+if(day === "tomorrow"){
+
+title.textContent =
+"Tomorrow's Programming";
+
+today.classList.remove("btn-primary");
+tomorrow.classList.add("btn-primary");
+
+Crow.toast(
+"Tomorrow's schedule selected."
+);
+
+}else{
+
+title.textContent =
+"Today's Programming";
+
+tomorrow.classList.remove("btn-primary");
+today.classList.add("btn-primary");
+
+Crow.toast(
+"Today's schedule selected."
+);
+
+}
+
+}
+
+</script>
 
 </body>
-
 </html>
