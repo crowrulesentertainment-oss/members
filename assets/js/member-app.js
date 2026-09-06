@@ -23,8 +23,78 @@
     user: null,
     profile: null,
 
+   (function () {
+  "use strict";
 
-    /* ===================================================
+  window.Crow = window.Crow || {};
+
+  let supabaseClient = null;
+
+  function getConfig() {
+    const url = window.CROW_SUPABASE_URL;
+    const key = window.CROW_SUPABASE_PUBLISHABLE_KEY;
+
+    if (!url || !key ||
+        key === "YOUR_ACTUAL_SUPABASE_PUBLISHABLE_KEY" ||
+        key === "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE") {
+      throw new Error("Supabase configuration is incomplete.");
+    }
+
+    if (!window.supabase || typeof window.supabase.createClient !== "function") {
+      throw new Error(
+        "Supabase JavaScript library did not load. Check the CDN script."
+      );
+    }
+
+    return { url, key };
+  }
+
+  function initClient() {
+    if (supabaseClient) return supabaseClient;
+
+    const config = getConfig();
+
+    supabaseClient = window.supabase.createClient(
+      config.url,
+      config.key,
+      {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: true,
+          storageKey: "crowrules-member-auth"
+        }
+      }
+    );
+
+    return supabaseClient;
+  }
+
+  /*
+   * Supports both:
+   *
+   * Crow.client()
+   * Crow.client
+   *
+   * so existing Member Hub pages don't break.
+   */
+  Crow.client = function () {
+    return initClient();
+  };
+
+  Crow.getClient = function () {
+    return initClient();
+  };
+
+  Crow.supabase = function () {
+    return initClient();
+  };
+
+  Crow.initClient = initClient;
+
+})();
+
+ /* ===================================================
        SUPABASE CLIENT
     =================================================== */
 
