@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<meta name="theme-color" content="#050505">
+<meta name="description"
+      content="Join CrowRules — Universal CrowRules Membership. One membership. One universe.">
+
+<title>Join CrowRules — Universal Membership</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050505;
+  --panel:#0c0c0f;
+  --panel2:#111116;
+  --line:rgba(255,255,255,.10);
+  --text:#f5f5f5;
+  --muted:#9999a3;
+  --red:#e50914;
+  --red2:#ff2631;
+  --green:#32d583;
+  --shadow:0 25px 80px rgba(0,0,0,.55);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  font-family:Montserrat,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 50% -15%,rgba(229,9,20,.20),transparent 38%),
+    radial-gradient(circle at 10% 70%,rgba(229,9,20,.06),transparent 30%),
+    radial-gradient(circle at 90% 80%,rgba(255,255,255,.04),transparent 25%),
+    var(--bg);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+.container{
+  width:min(1120px,calc(100% - 32px));
+  margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(5,5,5,.86);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.header-inner{
+  min-height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-mark{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  background:
+    linear-gradient(135deg,rgba(229,9,20,.25),#0b0b0c);
+  border:1px solid rgba(229,9,20,.6);
+  font-family:Orbitron,sans-serif;
+  font-weight:800;
+  box-shadow:0 0 25px rgba(229,9,20,.14);
+}
+
+.brand-name{
+  font-family:Orbitron,sans-serif;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.16em;
+}
+
+.brand-sub{
+  margin-top:4px;
+  color:#77777f;
+  font-size:9px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+.back-link{
+  color:#aaaab2;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.back-link:hover{
+  color:#fff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:80px 0 50px;
+  text-align:center;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 13px;
+  border:1px solid rgba(229,9,20,.35);
+  border-radius:999px;
+  background:rgba(229,9,20,.07);
+  color:#ff6f76;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+.dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--red);
+  box-shadow:0 0 12px var(--red);
+}
+
+.hero h1{
+  margin:23px auto 15px;
+  font-family:Orbitron,sans-serif;
+  font-size:clamp(36px,7vw,70px);
+  line-height:1.03;
+  letter-spacing:-.045em;
+}
+
+.hero h1 span{
+  color:var(--red2);
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:var(--muted);
+  line-height:1.75;
+  font-size:14px;
+}
+
+/* =========================
+   MEMBERSHIP
+========================= */
+
+.membership{
+  padding:20px 0 80px;
+}
+
+.plan-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.plan{
+  position:relative;
+  padding:25px 20px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015)),
+    var(--panel);
+  transition:.22s ease;
+}
+
+.plan:hover{
+  transform:translateY(-4px);
+  border-color:rgba(229,9,20,.38);
+}
+
+.plan.featured{
+  border-color:rgba(229,9,20,.6);
+  box-shadow:
+    0 0 0 1px rgba(229,9,20,.08),
+    0 20px 50px rgba(229,9,20,.08);
+}
+
+.featured-label{
+  position:absolute;
+  top:0;
+  right:18px;
+  transform:translateY(-50%);
+  padding:5px 9px;
+  border-radius:999px;
+  background:var(--red);
+  color:#fff;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.12em;
+}
+
+.plan-name{
+  font-family:Orbitron,sans-serif;
+  font-size:18px;
+  font-weight:800;
+  letter-spacing:.05em;
+}
+
+.plan-price{
+  margin:17px 0 8px;
+  font-family:Orbitron,sans-serif;
+  font-size:30px;
+  font-weight:800;
+}
+
+.plan-price small{
+  color:#77777f;
+  font-family:Montserrat,sans-serif;
+  font-size:10px;
+  font-weight:500;
+}
+
+.plan-description{
+  min-height:58px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.65;
+}
+
+.plan-button{
+  width:100%;
+  margin-top:18px;
+  padding:11px 14px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#151518;
+  color:#fff;
+  cursor:pointer;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.plan-button:hover{
+  border-color:rgba(229,9,20,.55);
+}
+
+.plan.featured .plan-button{
+  background:linear-gradient(135deg,#a4060e,#e50914);
+  border-color:rgba(255,255,255,.10);
+}
+
+/* =========================
+   AUTH
+========================= */
+
+.auth-area{
+  display:none;
+  padding:0 0 80px;
+}
+
+.auth-area.active{
+  display:block;
+}
+
+.auth-card{
+  width:min(620px,100%);
+  margin:auto;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+
+.auth-card h2{
+  margin:0 0 10px;
+  font-family:Orbitron,sans-serif;
+  font-size:22px;
+}
+
+.auth-card p{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+}
+
+.google-button{
+  width:100%;
+  max-width:430px;
+  min-height:52px;
+  margin:18px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  background:#fff;
+  color:#151515;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.google-button:hover{
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.google-icon{
+  font-size:19px;
+  font-weight:900;
+}
+
+.message{
+  min-height:20px;
+  margin-top:14px;
+  color:#ff747a;
+  font-size:11px;
+}
+
+/* =========================
+   DESTINATIONS
+========================= */
+
+.destinations{
+  padding:0 0 90px;
+}
+
+.section-title{
+  margin-bottom:25px;
+  text-align:center;
+}
+
+.section-title h2{
+  margin:0 0 8px;
+  font-family:Orbitron,sans-serif;
+  font-size:30px;
+}
+
+.section-title p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.destination-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.destination{
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:19px;
+  background:#0b0b0e;
+}
+
+.destination-icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  background:#151519;
+  border:1px solid rgba(255,255,255,.09);
+  font-family:Orbitron,sans-serif;
+  font-weight:800;
+}
+
+.destination h3{
+  margin:17px 0 8px;
+  font-family:Orbitron,sans-serif;
+  font-size:17px;
+}
+
+.destination p{
+  margin:0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.7;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.info{
+  padding:0 0 80px;
+}
+
+.info-card{
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:rgba(255,255,255,.025);
+}
+
+.info-card h2{
+  margin:0 0 18px;
+  font-family:Orbitron,sans-serif;
+  font-size:22px;
+}
+
+.info-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.info-item{
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(0,0,0,.2);
+}
+
+.info-item strong{
+  display:block;
+  margin-bottom:5px;
+  font-size:12px;
+}
+
+.info-item span{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  padding:28px 0;
+  border-top:1px solid var(--line);
+  color:#696970;
+  text-align:center;
+  font-size:9px;
+  letter-spacing:.08em;
+}
+
+.footer-brand{
+  margin-bottom:7px;
+  color:#bdbdc4;
+  font-family:Orbitron,sans-serif;
+  font-weight:800;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(10px);
+}
+
+.modal.active{
+  display:flex;
+}
+
+.modal-card{
+  width:min(560px,100%);
+  max-height:90vh;
+  overflow:auto;
+  padding:30px;
+  border:1px solid rgba(229,9,20,.35);
+  border-radius:22px;
+  background:#0b0b0e;
+  box-shadow:var(--shadow);
+}
+
+.modal-card h2{
+  margin:0 0 8px;
+  font-family:Orbitron,sans-serif;
+}
+
+.modal-card p{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+}
+
+.modal-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.modal-btn{
+  flex:1;
+  min-width:150px;
+  padding:13px 16px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#151518;
+  color:#fff;
+  cursor:pointer;
+  font-weight:800;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.modal-btn.primary{
+  background:linear-gradient(135deg,#a4060e,#e50914);
+}
+
+.close-modal{
+  float:right;
+  border:0;
+  background:none;
+  color:#777;
+  cursor:pointer;
+  font-size:20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+  .plan-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:700px){
+  .destination-grid,
+  .info-list{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:60px;
+  }
+}
+
+@media(max-width:560px){
+  .plan-grid{
+    grid-template-columns:1fr;
+  }
+
+  .brand-sub{
+    display:none;
+  }
+
+  .header-inner{
+    min-height:66px;
+  }
+
+  .auth-card,
+  .info-card{
+    padding:22px 17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="container header-inner">
+
+    <a class="brand"
+       href="index.html">
+
+      <div class="brand-mark">
+        CR
+      </div>
+
+      <div>
+        <div class="brand-name">
+          CROWRULES
+        </div>
+
+        <div class="brand-sub">
+          Universal Membership
+        </div>
+      </div>
+
+    </a>
+
+    <a
+      class="back-link"
+      href="index.html"
+    >
+      ← Membership Hub
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Universal CrowRules Membership
+    </div>
+
+    <h1>
+      Join the
+      <span>CrowRules Universe.</span>
+    </h1>
+
+    <p>
+      One membership connects you to the growing CrowRules universe.
+      Start with CrowRules Entertainment, CrowRules Dreamscapes,
+      and CrowRules Memorials.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="membership">
+
+  <div class="container">
+
+    <div class="plan-grid">
+
+      <!-- CROW -->
+
+      <article class="plan">
+
+        <div class="plan-name">
+          CROW
+        </div>
+
+        <div class="plan-price">
+          Free
+        </div>
+
+        <div class="plan-description">
+          Create your CrowRules account and become part of the
+          CrowRules community.
+        </div>
+
+        <button
+          class="plan-button"
+          data-plan="crow"
+        >
+          Join Free
+        </button>
+
+      </article>
+
+
+      <!-- CROWNER -->
+
+      <article class="plan featured">
+
+        <div class="featured-label">
+          MEMBERSHIP
+        </div>
+
+        <div class="plan-name">
+          CROWNER
+        </div>
+
+        <div class="plan-price">
+          $5
+          <small>/month</small>
+        </div>
+
+        <div class="plan-description">
+          Universal CrowRules membership with expanded member
+          access and CrowPoints participation.
+        </div>
+
+        <button
+          class="plan-button"
+          data-plan="crowner"
+        >
+          Become a Crowner
+        </button>
+
+      </article>
+
+
+      <!-- CREATOR -->
+
+      <article class="plan">
+
+        <div class="plan-name">
+          CREATOR
+        </div>
+
+        <div class="plan-price">
+          $10
+          <small>/month</small>
+        </div>
+
+        <div class="plan-description">
+          A higher membership level designed for members
+          building and creating within the CrowRules universe.
+        </div>
+
+        <button
+          class="plan-button"
+          data-plan="creator"
+        >
+          Choose Creator
+        </button>
+
+      </article>
+
+
+      <!-- FOUNDER -->
+
+      <article class="plan">
+
+        <div class="plan-name">
+          FOUNDER
+        </div>
+
+        <div class="plan-price">
+          $25
+          <small>/month</small>
+        </div>
+
+        <div class="plan-description">
+          Support the continued development of CrowRules
+          with the Founder membership level.
+        </div>
+
+        <button
+          class="plan-button"
+          data-plan="founder"
+        >
+          Choose Founder
+        </button>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="authArea" class="auth-area">
+
+  <div class="container">
+
+    <div class="auth-card">
+
+      <h2 id="authTitle">
+        Create Your CrowRules Account
+      </h2>
+
+      <p id="authDescription">
+        Continue with Google to create or access your
+        Universal CrowRules Membership account.
+      </p>
+
+      <button
+        id="googleButton"
+        class="google-button"
+        type="button"
+      >
+        <span class="google-icon">G</span>
+        <span>Continue with Google</span>
+      </button>
+
+      <div
+        id="authMessage"
+        class="message"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="destinations">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Your Membership Connects You
+      </h2>
+
+      <p>
+        These are the first CrowRules destinations available through the universe.
+      </p>
+
+    </div>
+
+
+    <div class="destination-grid">
+
+
+      <article class="destination">
+
+        <div class="destination-icon">
+          CR
+        </div>
+
+        <h3>
+          CrowRules Entertainment
+        </h3>
+
+        <p>
+          The central home for CrowRules Entertainment,
+          original productions, community projects,
+          live experiences, and the next chapter.
+        </p>
+
+      </article>
+
+
+      <article class="destination">
+
+        <div
+          class="destination-icon"
+          style="color:#bd91ff"
+        >
+          DS
+        </div>
+
+        <h3>
+          CrowRules Dreamscapes
+        </h3>
+
+        <p>
+          A creative universe where dreams and ideas can
+          become stories, worlds, projects, and productions.
+        </p>
+
+      </article>
+
+
+      <article class="destination">
+
+        <div
+          class="destination-icon"
+          style="color:#ff747a"
+        >
+          M
+        </div>
+
+        <h3>
+          CrowRules Memorials
+        </h3>
+
+        <p>
+          Remember. Honor. Celebrate.
+          Preserve lives, stories, photographs,
+          tributes, and legacies.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="info">
+
+  <div class="container">
+
+    <div class="info-card">
+
+      <h2>
+        How CrowRules Membership Works
+      </h2>
+
+      <div class="info-list">
+
+        <div class="info-item">
+          <strong>One Account</strong>
+          <span>
+            Your CrowRules identity follows you across
+            participating CrowRules destinations.
+          </span>
+        </div>
+
+        <div class="info-item">
+          <strong>One Universe</strong>
+          <span>
+            Entertainment, Dreamscapes, Memorials,
+            and future CrowRules destinations can connect
+            to the same membership.
+          </span>
+        </div>
+
+        <div class="info-item">
+          <strong>CrowPoints</strong>
+          <span>
+            Participate in the CrowRules universe and
+            build your CrowPoints history as supported
+            features become available.
+          </span>
+        </div>
+
+        <div class="info-item">
+          <strong>Membership Levels</strong>
+          <span>
+            Start free or choose a paid membership level.
+            Your membership level can be expanded as
+            CrowRules grows.
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-brand">
+      CROWRULES ENTERTAINMENT
+    </div>
+
+    Universal CrowRules Membership
+
+    <br>
+
+    © 2026 CrowRules Entertainment
+
+  </div>
+
+</footer>
+
+
+<!-- PLAN SELECTION MODAL -->
+
+<div
+  id="planModal"
+  class="modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modalTitle"
+>
+
+  <div class="modal-card">
+
+    <button
+      id="closeModal"
+      class="close-modal"
+      type="button"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+    <h2 id="modalTitle">
+      Join CrowRules
+    </h2>
+
+    <p id="modalDescription">
+      Continue with Google to create or access your
+      CrowRules membership account.
+    </p>
+
+    <div class="modal-actions">
+
+      <button
+        id="modalContinue"
+        class="modal-btn primary"
+        type="button"
+      >
+        Continue with Google
+      </button>
+
+      <button
+        id="modalCancel"
+        class="modal-btn"
+        type="button"
+      >
+        Cancel
+      </button>
+
+    </div>
+
+    <div
+      id="modalMessage"
+      class="message"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+/* =========================================================
+   SUPABASE
+========================================================= */
+
+const SUPABASE_URL =
+  "https://cevylpnoexugwgygvtgu.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_AdfM5y6RqvF3tbvEVzDZSg_JuGTQLD-";
+
+const supabaseClient =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+
+/* =========================================================
+   DOM
+========================================================= */
+
+const authArea =
+  document.getElementById("authArea");
+
+const googleButton =
+  document.getElementById("googleButton");
+
+const authMessage =
+  document.getElementById("authMessage");
+
+const planModal =
+  document.getElementById("planModal");
+
+const modalTitle =
+  document.getElementById("modalTitle");
+
+const modalDescription =
+  document.getElementById("modalDescription");
+
+const modalMessage =
+  document.getElementById("modalMessage");
+
+const modalContinue =
+  document.getElementById("modalContinue");
+
+const closeModal =
+  document.getElementById("closeModal");
+
+const modalCancel =
+  document.getElementById("modalCancel");
+
+
+let selectedPlan = "crow";
+
+
+/* =========================================================
+   PLAN INFORMATION
+========================================================= */
+
+const plans = {
+
+  crow:{
+    name:"CROW",
+    description:
+      "Create your free CrowRules account and become part of the community."
+  },
+
+  crowner:{
+    name:"CROWNER",
+    description:
+      "Universal CrowRules Membership — $5/month."
+  },
+
+  creator:{
+    name:"CREATOR",
+    description:
+      "Creator Membership — $10/month."
+  },
+
+  founder:{
+    name:"FOUNDER",
+    description:
+      "Founder Membership — $25/month."
+  }
+
+};
+
+
+/* =========================================================
+   OPEN PLAN
+========================================================= */
+
+function openPlan(planKey){
+
+  selectedPlan =
+    planKey || "crow";
+
+  const plan =
+    plans[selectedPlan] ||
+    plans.crow;
+
+  modalTitle.textContent =
+    "Join " + plan.name;
+
+  modalDescription.textContent =
+    plan.description +
+    " Continue with Google to create or access your CrowRules account.";
+
+  modalMessage.textContent = "";
+
+  planModal.classList.add("active");
+
+}
+
+
+/* =========================================================
+   CLOSE PLAN
+========================================================= */
+
+function closePlan(){
+
+  planModal.classList.remove("active");
+
+}
+
+
+/* =========================================================
+   GOOGLE SIGN-IN
+========================================================= */
+
+async function signInWithGoogle(){
+
+  modalContinue.disabled = true;
+
+  modalContinue.textContent =
+    "Connecting…";
+
+  modalMessage.textContent = "";
+
+  const redirectTo =
+    window.location.origin +
+    window.location.pathname +
+    "?membership=" +
+    encodeURIComponent(selectedPlan);
+
+
+  const { error } =
+    await supabaseClient.auth.signInWithOAuth({
+
+      provider:"google",
+
+      options:{
+        redirectTo
+      }
+
+    });
+
+
+  if(error){
+
+    modalMessage.textContent =
+      error.message ||
+      "Unable to start Google sign-in.";
+
+    modalContinue.disabled = false;
+
+    modalContinue.textContent =
+      "Continue with Google";
+
+  }
+
+}
+
+
+/* =========================================================
+   LOAD CURRENT USER
+========================================================= */
+
+async function initialize(){
+
+  const {
+    data:{
+      session
+    }
+  } =
+    await supabaseClient.auth.getSession();
+
+
+  if(session?.user){
+
+    await handleAuthenticatedUser(
+      session.user
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   AFTER AUTHENTICATION
+========================================================= */
+
+async function handleAuthenticatedUser(user){
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+  const requestedPlan =
+    params.get("membership") ||
+    selectedPlan ||
+    "crow";
+
+
+  selectedPlan =
+    plans[requestedPlan]
+      ? requestedPlan
+      : "crow";
+
+
+  /*
+     Ensure the Universal Membership profile
+     exists without replacing existing profile data.
+  */
+
+  const profile =
+    await supabaseClient
+      .from("membership_profiles")
+      .upsert({
+
+        id:user.id,
+
+        display_name:
+          user.user_metadata?.full_name ||
+          user.user_metadata?.name ||
+          user.email?.split("@")[0] ||
+          "Crowner",
+
+        avatar_url:
+          user.user_metadata?.avatar_url ||
+          user.user_metadata?.picture ||
+          null
+
+      },{
+        onConflict:"id",
+        ignoreDuplicates:true
+      });
+
+
+  if(profile.error){
+
+    console.warn(
+      "Membership profile:",
+      profile.error.message
+    );
+
+  }
+
+
+  /*
+     Free CROW membership can continue directly.
+     Paid memberships should continue through
+     the configured billing flow.
+  */
+
+  if(selectedPlan === "crow"){
+
+    window.location.href =
+      "index.html";
+
+    return;
+
+  }
+
+
+  /*
+     Paid membership handoff.
+     This intentionally does not create a fake
+     Stripe checkout URL. Connect your existing
+     Stripe checkout Edge Function here.
+  */
+
+  authArea.classList.add("active");
+
+  closePlan();
+
+  authMessage.textContent =
+    "Your CrowRules account is connected. " +
+    "Paid membership checkout will continue through the CrowRules billing system.";
+
+  document.getElementById("authTitle").textContent =
+    "Account Connected";
+
+  document.getElementById("authDescription").textContent =
+    "Your Google account is now connected to Universal CrowRules Membership. " +
+    "The selected membership is " +
+    plans[selectedPlan].name +
+    ".";
+
+}
+
+
+/* =========================================================
+   PLAN BUTTONS
+========================================================= */
+
+document
+  .querySelectorAll("[data-plan]")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        openPlan(
+          button.dataset.plan
+        );
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+modalContinue.addEventListener(
+  "click",
+  signInWithGoogle
+);
+
+closeModal.addEventListener(
+  "click",
+  closePlan
+);
+
+modalCancel.addEventListener(
+  "click",
+  closePlan
+);
+
+planModal.addEventListener(
+  "click",
+  event => {
+
+    if(event.target === planModal){
+      closePlan();
+    }
+
+  }
+);
+
+googleButton.addEventListener(
+  "click",
+  signInWithGoogle
+);
+
+
+/* =========================================================
+   AUTH STATE
+========================================================= */
+
+supabaseClient.auth.onAuthStateChange(
+  async (_event,session) => {
+
+    if(session?.user){
+
+      await handleAuthenticatedUser(
+        session.user
+      );
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   START
+========================================================= */
+
+initialize();
+
+</script>
+
+</body>
+</html>
