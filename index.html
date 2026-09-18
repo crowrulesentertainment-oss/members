@@ -8,7 +8,1461 @@
 content="width=device-width,initial-scale=1">
 
 <meta name="theme-color"
-content="#05060a">
+content="#05060a"><!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<meta name="theme-color" content="#050505">
+<meta name="description"
+      content="Universal CrowRules Membership — One membership. One universe. Access CrowRules Entertainment, Dreamscapes, and Memorials.">
+
+<title>Universal CrowRules Membership</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050505;
+  --panel:#0c0c0f;
+  --panel2:#111116;
+  --line:rgba(255,255,255,.10);
+  --text:#f5f5f5;
+  --muted:#9c9ca5;
+  --red:#e50914;
+  --red2:#ff2631;
+  --cyan:#00d9ff;
+  --purple:#8b5cf6;
+  --green:#31d17c;
+  --shadow:0 25px 70px rgba(0,0,0,.55);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(229,9,20,.18),transparent 38%),
+    radial-gradient(circle at 15% 60%,rgba(0,217,255,.07),transparent 30%),
+    radial-gradient(circle at 85% 70%,rgba(139,92,246,.08),transparent 30%),
+    var(--bg);
+  color:var(--text);
+  font-family:Montserrat,Arial,sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+.container{
+  width:min(1180px,calc(100% - 32px));
+  margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  background:rgba(5,5,5,.82);
+  border-bottom:1px solid var(--line);
+}
+
+.header-inner{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-mark{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(229,9,20,.7);
+  background:
+    linear-gradient(135deg,rgba(229,9,20,.22),rgba(0,0,0,.8));
+  font-family:Orbitron,sans-serif;
+  font-weight:800;
+  color:#fff;
+  box-shadow:0 0 25px rgba(229,9,20,.15);
+}
+
+.brand-text{
+  line-height:1.05;
+}
+
+.brand-name{
+  font-family:Orbitron,sans-serif;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.16em;
+}
+
+.brand-sub{
+  margin-top:4px;
+  font-size:9px;
+  color:var(--muted);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.btn{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:11px 17px;
+  cursor:pointer;
+  transition:.2s ease;
+  color:#fff;
+  background:#111;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  border-color:rgba(255,255,255,.25);
+}
+
+.btn-red{
+  border-color:rgba(229,9,20,.65);
+  background:linear-gradient(135deg,#a4060e,#e50914);
+  box-shadow:0 8px 28px rgba(229,9,20,.18);
+}
+
+.btn-red:hover{
+  border-color:#ff5960;
+  box-shadow:0 10px 35px rgba(229,9,20,.28);
+}
+
+.btn-ghost{
+  background:rgba(255,255,255,.04);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:90px 0 65px;
+  text-align:center;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:650px;
+  height:650px;
+  left:50%;
+  top:-420px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:rgba(229,9,20,.13);
+  filter:blur(80px);
+  pointer-events:none;
+}
+
+.eyebrow{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:7px 13px;
+  border:1px solid rgba(229,9,20,.35);
+  border-radius:999px;
+  background:rgba(229,9,20,.07);
+  color:#ff7379;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+.eyebrow-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--red);
+  box-shadow:0 0 12px var(--red);
+}
+
+.hero h1{
+  position:relative;
+  margin:22px auto 14px;
+  max-width:900px;
+  font-family:Orbitron,sans-serif;
+  font-size:clamp(36px,7vw,76px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+
+.hero h1 span{
+  background:linear-gradient(90deg,#fff,#fff 45%,#ff5c63);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  position:relative;
+  max-width:700px;
+  margin:0 auto;
+  color:var(--muted);
+  line-height:1.75;
+  font-size:15px;
+}
+
+.hero-actions{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+/* =========================
+   AUTH CARD
+========================= */
+
+.auth-section{
+  padding:10px 0 70px;
+}
+
+.auth-card{
+  width:min(700px,100%);
+  margin:auto;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018)),
+    var(--panel);
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+
+.auth-card h2{
+  margin:0 0 8px;
+  font-family:Orbitron,sans-serif;
+  font-size:22px;
+}
+
+.auth-card p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+  margin:0 0 22px;
+}
+
+.google-btn{
+  width:100%;
+  max-width:430px;
+  min-height:52px;
+  margin:auto;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:12px;
+  background:#fff;
+  color:#151515;
+  font-weight:700;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  transition:.2s ease;
+}
+
+.google-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+.google-icon{
+  font-weight:900;
+  font-size:19px;
+}
+
+.auth-message{
+  min-height:20px;
+  margin-top:14px;
+  color:#ff8d92;
+  font-size:12px;
+}
+
+/* =========================
+   MEMBER PANEL
+========================= */
+
+.member-panel{
+  display:none;
+}
+
+.member-panel.active{
+  display:block;
+}
+
+.member-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  text-align:left;
+  margin-bottom:25px;
+}
+
+.avatar{
+  width:62px;
+  height:62px;
+  flex:0 0 62px;
+  border-radius:50%;
+  border:2px solid rgba(229,9,20,.6);
+  overflow:hidden;
+  background:#18181c;
+  display:grid;
+  place-items:center;
+  font-family:Orbitron,sans-serif;
+  color:#fff;
+}
+
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.member-name{
+  font-family:Orbitron,sans-serif;
+  font-size:18px;
+  font-weight:700;
+}
+
+.member-email{
+  margin-top:4px;
+  color:var(--muted);
+  font-size:12px;
+  word-break:break-word;
+}
+
+.plan{
+  display:inline-block;
+  margin-top:8px;
+  padding:4px 9px;
+  border-radius:999px;
+  background:rgba(229,9,20,.12);
+  border:1px solid rgba(229,9,20,.3);
+  color:#ff777d;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.13em;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.stat{
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(255,255,255,.025);
+}
+
+.stat-label{
+  color:var(--muted);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.stat-value{
+  margin-top:8px;
+  font-family:Orbitron,sans-serif;
+  font-size:24px;
+  font-weight:800;
+}
+
+/* =========================
+   DESTINATIONS
+========================= */
+
+.destinations{
+  padding:30px 0 100px;
+}
+
+.section-head{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-head .label{
+  color:#ff6970;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.section-head h2{
+  margin:10px 0 8px;
+  font-family:Orbitron,sans-serif;
+  font-size:clamp(26px,4vw,42px);
+}
+
+.section-head p{
+  margin:0 auto;
+  max-width:650px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+.site-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.site-card{
+  position:relative;
+  min-height:270px;
+  padding:26px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(229,9,20,.13),transparent 45%),
+    var(--panel);
+  transition:.25s ease;
+}
+
+.site-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(229,9,20,.42);
+  box-shadow:0 22px 55px rgba(0,0,0,.45);
+}
+
+.site-card::after{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  right:-70px;
+  bottom:-70px;
+  border-radius:50%;
+  background:rgba(229,9,20,.09);
+  filter:blur(20px);
+}
+
+.site-icon{
+  width:55px;
+  height:55px;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,.12);
+  background:#111116;
+  font-family:Orbitron,sans-serif;
+  font-size:17px;
+  font-weight:800;
+}
+
+.site-card h3{
+  margin:20px 0 8px;
+  font-family:Orbitron,sans-serif;
+  font-size:20px;
+}
+
+.site-card p{
+  margin:0;
+  min-height:67px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+}
+
+.site-link{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  margin-top:20px;
+  align-items:center;
+  gap:8px;
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.site-link span{
+  color:var(--red);
+  transition:.2s ease;
+}
+
+.site-card:hover .site-link span{
+  transform:translateX(4px);
+}
+
+/* =========================
+   JOIN
+========================= */
+
+.join{
+  padding:0 0 90px;
+}
+
+.join-card{
+  position:relative;
+  overflow:hidden;
+  padding:45px 30px;
+  text-align:center;
+  border:1px solid rgba(229,9,20,.28);
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(229,9,20,.18),transparent 55%),
+    linear-gradient(145deg,#0f0f13,#080809);
+}
+
+.join-card h2{
+  margin:0 0 12px;
+  font-family:Orbitron,sans-serif;
+  font-size:clamp(25px,4vw,39px);
+}
+
+.join-card p{
+  max-width:650px;
+  margin:0 auto 24px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.75;
+}
+
+.join-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:210px;
+  padding:14px 24px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#a4060e,#e50914);
+  border:1px solid rgba(255,255,255,.13);
+  font-weight:800;
+  letter-spacing:.05em;
+  box-shadow:0 14px 35px rgba(229,9,20,.2);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 0;
+  color:#707078;
+  font-size:10px;
+  text-align:center;
+  letter-spacing:.08em;
+}
+
+.footer-brand{
+  color:#b8b8c0;
+  font-family:Orbitron,sans-serif;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.loading{
+  opacity:.65;
+  pointer-events:none;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+  .site-grid{
+    grid-template-columns:1fr;
+  }
+
+  .site-card{
+    min-height:auto;
+  }
+}
+
+@media(max-width:600px){
+  .header-inner{
+    min-height:68px;
+  }
+
+  .brand-sub{
+    display:none;
+  }
+
+  .header-actions .btn-ghost{
+    display:none;
+  }
+
+  .hero{
+    padding:65px 0 45px;
+  }
+
+  .auth-card{
+    padding:23px 17px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .member-top{
+    align-items:flex-start;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+
+    <a class="brand" href="/">
+      <div class="brand-mark">CR</div>
+
+      <div class="brand-text">
+        <div class="brand-name">CROWRULES</div>
+        <div class="brand-sub">Universal Membership</div>
+      </div>
+    </a>
+
+    <div class="header-actions">
+      <a class="btn btn-ghost" href="#destinations">
+        Explore
+      </a>
+
+      <a class="btn btn-red" href="/join.html">
+        Join CrowRules
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+<main>
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      One Membership • One Universe
+    </div>
+
+    <h1>
+      Welcome to the
+      <span>CrowRules Universe.</span>
+    </h1>
+
+    <p>
+      Universal CrowRules Membership connects you to the growing
+      CrowRules universe. Start with Entertainment, Dreamscapes,
+      and Memorials — with more destinations coming as the universe expands.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-red" href="/join.html">
+        JOIN CROWRULES
+      </a>
+
+      <a class="btn btn-ghost" href="#destinations">
+        Explore the Universe
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="auth-section">
+
+  <div class="container">
+
+    <div class="auth-card">
+
+      <!-- SIGNED OUT -->
+
+      <div id="signedOut">
+
+        <h2>Become a Crowner</h2>
+
+        <p>
+          Already have a CrowRules membership?
+          Sign in with Google to access your universal member profile.
+        </p>
+
+        <button
+          id="googleSignIn"
+          class="google-btn"
+          type="button"
+        >
+          <span class="google-icon">G</span>
+          <span>Continue with Google</span>
+        </button>
+
+        <div id="authMessage" class="auth-message"></div>
+
+        <div style="margin-top:18px">
+          <a
+            href="/join.html"
+            style="color:#ff686f;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase"
+          >
+            New here? Join CrowRules →
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- SIGNED IN -->
+
+      <div id="signedIn" class="member-panel">
+
+        <div class="member-top">
+
+          <div id="memberAvatar" class="avatar">
+            CR
+          </div>
+
+          <div>
+            <div id="memberDisplayName" class="member-name">
+              Crowner
+            </div>
+
+            <div id="memberEmail" class="member-email">
+              —
+            </div>
+
+            <div id="memberPlan" class="plan">
+              CROW
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="stats">
+
+          <div class="stat">
+            <div class="stat-label">
+              Lifetime CrowPoints
+            </div>
+
+            <div id="lifetimePoints" class="stat-value">
+              0
+            </div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-label">
+              Monthly CrowPoints
+            </div>
+
+            <div id="monthlyPoints" class="stat-value">
+              0
+            </div>
+          </div>
+
+        </div>
+
+
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+
+          <a
+            class="btn btn-red"
+            href="/member/"
+          >
+            Member Hub
+          </a>
+
+          <button
+            id="signOut"
+            class="btn btn-ghost"
+            type="button"
+          >
+            Sign Out
+          </button>
+
+        </div>
+
+        <div id="memberMessage" class="auth-message"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="destinations" class="destinations">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="label">
+        Your CrowRules Access
+      </div>
+
+      <h2>Explore the Universe</h2>
+
+      <p>
+        Your Universal CrowRules Membership starts here.
+        These are the three destinations currently available through the hub.
+      </p>
+
+    </div>
+
+
+    <div class="site-grid">
+
+
+      <!-- ENTERTAINMENT -->
+
+      <a
+        class="site-card"
+        href="https://crowrulesentertainment-oss.github.io/crowrulesentertainment/"
+      >
+
+        <div class="site-icon">
+          CR
+        </div>
+
+        <h3>
+          CrowRules Entertainment
+        </h3>
+
+        <p>
+          The central home of CrowRules Entertainment,
+          original productions, community projects,
+          live experiences, and the next chapter of the universe.
+        </p>
+
+        <div class="site-link">
+          ENTER ENTERTAINMENT
+          <span>→</span>
+        </div>
+
+      </a>
+
+
+      <!-- DREAMSCAPES -->
+
+      <a
+        class="site-card"
+        href="https://crowrulesentertainment-oss.github.io/dreamscapes/"
+      >
+
+        <div
+          class="site-icon"
+          style="color:#b98cff"
+        >
+          DS
+        </div>
+
+        <h3>
+          CrowRules Dreamscapes
+        </h3>
+
+        <p>
+          Bring dreams and ideas to life.
+          Explore stories, worlds, creators, projects,
+          and the developing Dreamscapes universe.
+        </p>
+
+        <div class="site-link">
+          ENTER DREAMSCAPES
+          <span>→</span>
+        </div>
+
+      </a>
+
+
+      <!-- MEMORIALS -->
+
+      <a
+        class="site-card"
+        href="https://crowrulesentertainment-oss.github.io/memorials/"
+      >
+
+        <div
+          class="site-icon"
+          style="color:#ff6b72"
+        >
+          M
+        </div>
+
+        <h3>
+          CrowRules Memorials
+        </h3>
+
+        <p>
+          Remember. Honor. Celebrate.
+          A growing archive preserving lives, stories,
+          photographs, tributes, and legacies.
+        </p>
+
+        <div class="site-link">
+          ENTER MEMORIALS
+          <span>→</span>
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="join">
+
+  <div class="container">
+
+    <div class="join-card">
+
+      <h2>
+        Join the CrowRules Universe
+      </h2>
+
+      <p>
+        Create your CrowRules membership and become part of the
+        community as the universe continues to grow.
+        Your membership will follow you across CrowRules destinations.
+      </p>
+
+      <a
+        class="join-btn"
+        href="/join.html"
+      >
+        JOIN CROWRULES
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-brand">
+      CROWRULES ENTERTAINMENT
+    </div>
+
+    Universal CrowRules Membership
+
+    <br>
+
+    © 2026 CrowRules Entertainment
+
+  </div>
+
+</footer>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+/* =========================================================
+   SUPABASE CONFIGURATION
+========================================================= */
+
+const SUPABASE_URL =
+  "https://cevylpnoexugwgygvtgu.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_AdfM5y6RqvF3tbvEVzDZSg_JuGTQLD-";
+
+const supabaseClient =
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+
+/* =========================================================
+   DOM
+========================================================= */
+
+const signedOut =
+  document.getElementById("signedOut");
+
+const signedIn =
+  document.getElementById("signedIn");
+
+const googleSignIn =
+  document.getElementById("googleSignIn");
+
+const signOut =
+  document.getElementById("signOut");
+
+const authMessage =
+  document.getElementById("authMessage");
+
+const memberMessage =
+  document.getElementById("memberMessage");
+
+const memberDisplayName =
+  document.getElementById("memberDisplayName");
+
+const memberEmail =
+  document.getElementById("memberEmail");
+
+const memberPlan =
+  document.getElementById("memberPlan");
+
+const memberAvatar =
+  document.getElementById("memberAvatar");
+
+const lifetimePoints =
+  document.getElementById("lifetimePoints");
+
+const monthlyPoints =
+  document.getElementById("monthlyPoints");
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function escapeHtml(value){
+  return String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+
+function setMessage(element,message){
+  if(element){
+    element.textContent = message || "";
+  }
+}
+
+
+function getDisplayName(user){
+
+  const metadata =
+    user?.user_metadata || {};
+
+  return (
+    metadata.full_name ||
+    metadata.name ||
+    metadata.preferred_username ||
+    user?.email?.split("@")[0] ||
+    "Crowner"
+  );
+}
+
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+async function signInWithGoogle(){
+
+  setMessage(authMessage,"");
+
+  googleSignIn.classList.add("loading");
+  googleSignIn.textContent = "Connecting…";
+
+  const redirectTo =
+    window.location.origin +
+    window.location.pathname;
+
+  const { error } =
+    await supabaseClient.auth.signInWithOAuth({
+
+      provider:"google",
+
+      options:{
+        redirectTo
+      }
+
+    });
+
+  if(error){
+
+    setMessage(
+      authMessage,
+      error.message || "Unable to start Google sign-in."
+    );
+
+    googleSignIn.classList.remove("loading");
+
+    googleSignIn.innerHTML =
+      '<span class="google-icon">G</span>' +
+      '<span>Continue with Google</span>';
+
+  }
+
+}
+
+
+async function handleSignOut(){
+
+  setMessage(memberMessage,"");
+
+  const { error } =
+    await supabaseClient.auth.signOut();
+
+  if(error){
+
+    setMessage(
+      memberMessage,
+      error.message || "Unable to sign out."
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   MEMBERSHIP PROFILE
+========================================================= */
+
+async function loadMembershipProfile(user){
+
+  if(!user) return;
+
+  const userId =
+    user.id;
+
+  const metadata =
+    user.user_metadata || {};
+
+
+  memberDisplayName.textContent =
+    getDisplayName(user);
+
+  memberEmail.textContent =
+    user.email || "—";
+
+
+  /* -------------------------
+     Avatar
+  ------------------------- */
+
+  const avatarUrl =
+    metadata.avatar_url ||
+    metadata.picture ||
+    "";
+
+  if(avatarUrl){
+
+    const safeUrl =
+      encodeURI(avatarUrl);
+
+    memberAvatar.innerHTML =
+      `<img src="${safeUrl}" alt="Crowner avatar">`;
+
+  }else{
+
+    memberAvatar.textContent =
+      getDisplayName(user)
+        .trim()
+        .charAt(0)
+        .toUpperCase() || "C";
+
+  }
+
+
+  /* -------------------------
+     Membership Profile
+  ------------------------- */
+
+  const profileResult =
+    await supabaseClient
+      .from("membership_profiles")
+      .select("display_name,username,avatar_url,points")
+      .eq("id",userId)
+      .maybeSingle();
+
+
+  if(profileResult.data){
+
+    const profile =
+      profileResult.data;
+
+    if(profile.display_name){
+
+      memberDisplayName.textContent =
+        profile.display_name;
+
+    }
+
+    if(profile.avatar_url){
+
+      memberAvatar.innerHTML =
+        `<img src="${encodeURI(profile.avatar_url)}"
+              alt="Crowner avatar">`;
+
+    }
+
+  }
+
+
+  /* -------------------------
+     Membership Subscription
+  ------------------------- */
+
+  const subscriptionResult =
+    await supabaseClient
+      .from("membership_subscriptions")
+      .select(`
+        status,
+        plan_id,
+        current_period_end,
+        membership_plans (
+          plan_key,
+          name,
+          level
+        )
+      `)
+      .eq("user_id",userId)
+      .order("created_at",{ascending:false})
+      .limit(1)
+      .maybeSingle();
+
+
+  if(subscriptionResult.data){
+
+    const subscription =
+      subscriptionResult.data;
+
+    const plan =
+      subscription.membership_plans;
+
+    if(plan){
+
+      memberPlan.textContent =
+        plan.name || "CROW";
+
+    }
+
+  }else{
+
+    memberPlan.textContent =
+      "CROW";
+
+  }
+
+
+  /* -------------------------
+     CrowPoints
+  ------------------------- */
+
+  const statsResult =
+    await supabaseClient
+      .from("cr_tv_user_stats")
+      .select("lifetime_points")
+      .eq("user_id",userId)
+      .maybeSingle();
+
+
+  if(statsResult.data){
+
+    lifetimePoints.textContent =
+      Number(
+        statsResult.data.lifetime_points || 0
+      ).toLocaleString();
+
+  }else{
+
+    lifetimePoints.textContent =
+      "0";
+
+  }
+
+
+  /*
+     Monthly CrowPoints are intentionally
+     calculated from the existing ledger.
+  */
+
+  const start =
+    new Date();
+
+  start.setDate(1);
+  start.setHours(0,0,0,0);
+
+
+  const monthlyResult =
+    await supabaseClient
+      .from("cr_tv_crowpoints_ledger")
+      .select("points")
+      .eq("user_id",userId)
+      .gte("created_at",start.toISOString());
+
+
+  if(!monthlyResult.error &&
+     Array.isArray(monthlyResult.data)){
+
+    const total =
+      monthlyResult.data.reduce(
+        (sum,row) =>
+          sum + Number(row.points || 0),
+        0
+      );
+
+    monthlyPoints.textContent =
+      total.toLocaleString();
+
+  }else{
+
+    monthlyPoints.textContent =
+      "0";
+
+  }
+
+}
+
+
+/* =========================================================
+   RENDER AUTH STATE
+========================================================= */
+
+async function renderAuthState(session){
+
+  if(session?.user){
+
+    signedOut.classList.add("hidden");
+    signedIn.classList.add("active");
+
+    await loadMembershipProfile(
+      session.user
+    );
+
+  }else{
+
+    signedIn.classList.remove("active");
+    signedOut.classList.remove("hidden");
+
+  }
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+async function initialize(){
+
+  const {
+    data:{
+      session
+    }
+  } =
+    await supabaseClient.auth.getSession();
+
+  await renderAuthState(session);
+
+
+  supabaseClient.auth.onAuthStateChange(
+    async (_event,newSession) => {
+
+      await renderAuthState(
+        newSession
+      );
+
+    }
+  );
+
+}
+
+
+googleSignIn.addEventListener(
+  "click",
+  signInWithGoogle
+);
+
+
+signOut.addEventListener(
+  "click",
+  handleSignOut
+);
+
+
+initialize();
+
+</script>
+
+</body>
+</html>
 
 <meta name="description"
 content="CrowRules Entertainment Member Hub">
